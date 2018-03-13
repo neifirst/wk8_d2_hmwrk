@@ -29,11 +29,15 @@ public class Runner {
         DBHelper.save(file1);
         File file2 = new File("bathtime", "jpeg", 124, folder2);
         DBHelper.save(file2);
-        File file3 = new File("kevin_bacons_nose", "txt", 53, folder1);
+        File file3 = new File("kevin_bacons_nose", "txt", 53, folder3);
         DBHelper.save(file3);
         File file4 = new File("riding_a_giraffe", "jpeg", 290, folder2);
         DBHelper.save(file4);
 
+        folder4.setTitle("Even more pics of Jeff");
+        DBHelper.save(folder4);
+
+        DBHelper.delete(file4);
 
         List<File> allFiles = DBHelper.getAll(File.class);
 
@@ -50,8 +54,6 @@ public class Runner {
         List<File> foundFileByFolder = DBHelper.getFilesByFolder(folder2);
 
         List<Folder> foundFolderByOwner = DBHelper.getFolderByOwner(owner1);
-
-
 
 
     }
